@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import LanguageToggle from './LanguageToggle';
 import { useLanguage } from '@/lib/LanguageContext';
 import { useEffect, useState } from 'react';
@@ -19,13 +18,10 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 sm:py-4 min-h-20 sm:min-h-32">
           <Link href="/" className="flex items-center gap-2 sm:gap-6 flex-shrink-0">
-            <Image
+            <img
               src="/logo.png"
               alt="Seven Industries Logo"
-              width={112}
-              height={112}
               className="w-16 h-16 sm:w-28 sm:h-28 object-contain"
-              priority
             />
             <div className="hidden sm:block">
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900">{t('header.company')}</h1>
@@ -35,12 +31,15 @@ export default function Header() {
 
           <div className="flex items-center gap-2 sm:gap-4">
             <LanguageToggle />
-            <nav className="hidden md:flex space-x-4 lg:space-x-8">
+            <nav className="hidden md:flex space-x-4 lg:space-x-8 items-center">
               <Link href="/" className="text-xs sm:text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">
                 {t('nav.products')}
               </Link>
               <a href="#contact" className="text-xs sm:text-sm font-medium text-gray-700 hover:text-red-600 transition-colors">
                 {t('nav.contact')}
+              </a>
+              <a href="tel:+918279434278" className="text-xs sm:text-sm font-medium text-red-600 hover:text-red-700 transition-colors font-semibold">
+                📞 +91 8279434278
               </a>
             </nav>
           </div>
