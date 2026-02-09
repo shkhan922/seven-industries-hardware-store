@@ -11,14 +11,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12">
           <div className="flex flex-col items-center sm:items-start">
-            <div className="relative w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4">
-              <Image
-                src="/logo.png"
-                alt="Seven Industries Logo"
-                fill
-                className="object-contain"
-              />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Seven Industries Logo"
+              width={80}
+              height={80}
+              className="w-16 h-16 sm:w-20 sm:h-20 mb-3 sm:mb-4 object-contain"
+            />
             <h3 className="text-white font-bold text-base sm:text-lg mb-2 sm:mb-4 text-center sm:text-left">{t('footer.about')}</h3>
             <p className="text-xs sm:text-sm leading-relaxed text-center sm:text-left">
               {t('footer.aboutText')}

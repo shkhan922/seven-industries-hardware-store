@@ -19,15 +19,14 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3 sm:py-4 min-h-20 sm:min-h-32">
           <Link href="/" className="flex items-center gap-2 sm:gap-6 flex-shrink-0">
-            <div className="relative w-16 h-16 sm:w-28 sm:h-28">
-              <Image
-                src="/logo.png"
-                alt="Seven Industries Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <Image
+              src="/logo.png"
+              alt="Seven Industries Logo"
+              width={112}
+              height={112}
+              className="w-16 h-16 sm:w-28 sm:h-28 object-contain"
+              priority
+            />
             <div className="hidden sm:block">
               <h1 className="text-2xl sm:text-4xl font-bold text-gray-900">{t('header.company')}</h1>
               <p className="text-sm sm:text-lg text-red-600 font-semibold -mt-1">{t('header.tagline')}</p>
