@@ -73,22 +73,22 @@ export default function Home() {
       </div>
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-6 sm:py-12">
         {/* Hero Section */}
-        <div className="mb-12">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('home.title')}</h2>
-          <p className="text-lg text-gray-600">
+        <div className="mb-6 sm:mb-12">
+          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">{t('home.title')}</h2>
+          <p className="text-sm sm:text-lg text-gray-600">
             {t('home.description')}
           </p>
         </div>
 
       {/* Search Bar */}
-      <div className="mb-8">
+      <div className="mb-6 sm:mb-8">
         <SearchBar onSearch={(query) => setFilters({ ...filters, searchQuery: query })} />
       </div>
 
       {/* Main Content */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-8">
         {/* Sidebar Filters */}
         <div className="lg:col-span-1">
           <Filters
@@ -101,12 +101,12 @@ export default function Home() {
 
         {/* Products Grid */}
         <div className="lg:col-span-3">
-          <div className="mb-8 flex justify-between items-center">
-            <h3 className="text-2xl font-bold text-gray-900">
+          <div className="mb-6 sm:mb-8 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
+            <h3 className="text-lg sm:text-2xl font-bold text-gray-900">
               {t('home.productsCount')} ({filteredProducts.length})
             </h3>
             {totalPages > 1 && (
-              <div className="text-sm text-gray-600">
+              <div className="text-xs sm:text-sm text-gray-600">
                 Page {currentPage} of {totalPages}
               </div>
             )}
@@ -131,21 +131,26 @@ export default function Home() {
 
               {/* Pagination Controls */}
               {totalPages > 1 && (
-                <div className="mt-12 flex justify-center items-center gap-4">
+                <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4">
                   <button
                     onClick={() => setCurrentPage(Math.max(1, currentPage - 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                    className="px-3 sm:px-4 py-2 text-sm sm:text-base bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors w-full sm:w-auto"
                   >
                     ← Previous
                   </button>
 
-                  <div className="flex gap-2">
-                    {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <div className="flex gap-1 sm:gap-2 flex-wrap justify-center">
+                    {Array.from({ length: Math.min(totalPages, 5) }, (_, i) => {
+                      if (totalPages <= 5) return i + 1;
+                      if (currentPage <= 3) return i + 1;
+                      if (currentPage >= totalPages - 2) return totalPages - 4 + i;
+                      return currentPage - 2 + i;
+                    }).map((page) => (
                       <button
                         key={page}
                         onClick={() => setCurrentPage(page)}
-                        className={`px-3 py-2 rounded-lg transition-colors ${
+                        className={`px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-lg transition-colors ${
                           currentPage === page
                             ? 'bg-red-600 text-white'
                             : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -159,7 +164,7 @@ export default function Home() {
                   <button
                     onClick={() => setCurrentPage(Math.min(totalPages, currentPage + 1))}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors"
+                    className="px-3 sm:px-4 py-2 text-sm sm:text-base bg-red-600 text-white rounded-lg hover:bg-red-700 disabled:bg-gray-300 disabled:cursor-not-allowed transition-colors w-full sm:w-auto"
                   >
                     Next →
                   </button>

@@ -40,7 +40,7 @@ export default function BannerCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[500px] md:h-[700px] lg:h-[900px] overflow-hidden rounded-xl shadow-2xl mb-12 group">
+    <div className="relative w-full h-[250px] sm:h-[350px] md:h-[500px] lg:h-[700px] overflow-hidden rounded-lg sm:rounded-xl shadow-lg sm:shadow-2xl mb-6 sm:mb-12 group">
       {/* Banner Images */}
       <div className="relative w-full h-full bg-gray-100 flex items-center justify-center">
         {banners.map((banner, index) => (
@@ -62,10 +62,10 @@ export default function BannerCarousel() {
       {/* Previous Button */}
       <button
         onClick={prevBanner}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-all duration-200 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 z-10"
         aria-label="Previous banner"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
         </svg>
       </button>
@@ -73,10 +73,10 @@ export default function BannerCarousel() {
       {/* Next Button */}
       <button
         onClick={nextBanner}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-200 opacity-0 group-hover:opacity-100 z-10"
+        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-all duration-200 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 z-10"
         aria-label="Next banner"
       >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
         </svg>
       </button>

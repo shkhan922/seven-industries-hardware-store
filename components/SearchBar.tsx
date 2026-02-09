@@ -29,10 +29,10 @@ export default function SearchBar({ onSearch, placeholder = 'Search products by 
           value={query}
           onChange={handleChange}
           placeholder={placeholder}
-          className="w-full px-4 py-3 pl-12 pr-10 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          className="w-full px-3 sm:px-4 py-2 sm:py-3 pl-9 sm:pl-12 pr-8 sm:pr-10 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
         />
         <svg
-          className="absolute left-4 top-3.5 w-5 h-5 text-gray-400"
+          className="absolute left-3 sm:left-4 top-2.5 sm:top-3.5 w-4 h-4 sm:w-5 sm:h-5 text-gray-400"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -42,7 +42,7 @@ export default function SearchBar({ onSearch, placeholder = 'Search products by 
         {query && (
           <button
             onClick={handleClear}
-            className="absolute right-3 top-3.5 text-gray-400 hover:text-gray-600"
+            className="absolute right-2 sm:right-3 top-2.5 sm:top-3.5 text-gray-400 hover:text-gray-600 text-sm sm:text-base"
           >
             ✕
           </button>
