@@ -50,7 +50,7 @@ export default function Footer() {
             </p>
             <p className="text-xs sm:text-sm leading-relaxed mt-2 sm:mt-3">
               <strong>{t('footer.phone')}:</strong><br />
-              <a href="tel:+15551234567" className="hover:text-red-500 transition-colors">+1 (555) 123-4567</a>
+              <a href="tel:+918279434278" className="hover:text-red-500 transition-colors">+91 8279434278</a>
             </p>
             <p className="text-xs sm:text-sm leading-relaxed mt-2 sm:mt-3">
               <strong>{t('footer.hours')}:</strong><br />
