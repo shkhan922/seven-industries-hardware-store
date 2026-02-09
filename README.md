@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏭 Seven Industries Hardware Store
 
-## Getting Started
+Professional e-commerce platform for hardware fittings with product catalog, pagination, language support, and responsive design.
 
-First, run the development server:
+## ✨ Features
+
+- 🎨 **Professional WOW Design** - Modern, clean, and professional UI
+- 📦 **91 Products** - Complete hardware fittings catalog
+- 🔍 **Search & Filter** - Find products by name, category, or price
+- 📄 **Pagination** - 12 products per page with navigation
+- 🌍 **Bilingual Support** - English & Hindi language toggle
+- 💰 **Indian Rupee** - All prices in ₹ (Indian Rupee)
+- 📱 **Responsive Design** - Works on mobile, tablet, and desktop
+- 🖼️ **Professional Banners** - Large, properly sized carousel
+- 🏷️ **Real Categories** - 7 product categories extracted from data
+- ⚡ **Fast Performance** - Optimized Next.js application
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Node.js 18+
+- npm or yarn
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/shkhan922/seven-industries-hardware-store.git
+cd hardware-store
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Build & Deploy
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Build for Production
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+### Deploy to Netlify
+1. Push code to GitHub (already done ✅)
+2. Go to https://app.netlify.com
+3. Click "Add new site" → "Import an existing project"
+4. Select GitHub and authorize
+5. Choose `shkhan922/seven-industries-hardware-store`
+6. Click "Deploy site"
 
-To learn more about Next.js, take a look at the following resources:
+See [NETLIFY_DEPLOYMENT.md](./NETLIFY_DEPLOYMENT.md) for detailed instructions.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠️ Technology Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework:** Next.js 16 with React 19
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **State Management:** React Context API
+- **Data Source:** Excel files (XLSX)
+- **Deployment:** Netlify
+- **Version Control:** Git & GitHub
 
-## Deploy on Vercel
+## 📊 Product Data
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **Total Products:** 91
+- **Categories:** 7 (Handles, Knobs, Brackets, Stoppers, Hooks, Plates, Other)
+- **Source:** Rate List 3.xlsx & Rate List 4.xlsx
+- **Extraction:** Automated via `scripts/extract-products.js`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🌐 Language Support
+
+### English (en)
+- Complete UI in English
+- Professional business language
+
+### Hindi (हिंदी)
+- Complete UI in Hindi
+- Professional business language
+- Preference saved in localStorage
+
+## 🎨 Color Scheme
+
+- **Primary Red:** #DC2626 (professional and bold)
+- **Background:** White and light gray
+- **Text:** Dark gray for readability
+- **Accents:** Red for active states
+
+## 📝 Documentation
+
+- `DEPLOYMENT_COMPLETE.md` - Deployment status and checklist
+- `NETLIFY_DEPLOYMENT.md` - Netlify deployment guide
+- `CHANGES_MADE.md` - Detailed list of all changes
+- `CHECKLIST.md` - Complete feature checklist
+
+## 🔗 Links
+
+- **GitHub:** https://github.com/shkhan922/seven-industries-hardware-store
+- **Live Site:** (Deploy to Netlify to get URL)
+- **Company:** Seven Industries
+
+## 📄 License
+
+This project is proprietary to Seven Industries.
+
+## 🎉 Status
+
+✅ **Production Ready**
+
+All features implemented and tested. Ready for Netlify deployment.
+
+---
+
+**Version:** 1.0.0
+**Last Updated:** 2026-02-09
+**Status:** ✅ Complete
