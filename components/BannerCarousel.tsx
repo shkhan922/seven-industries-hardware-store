@@ -42,14 +42,14 @@ export default function BannerCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[350px] sm:h-[400px] md:h-[550px] lg:h-[800px] overflow-hidden rounded-lg sm:rounded-xl shadow-lg sm:shadow-2xl mb-6 sm:mb-12 group flex items-center justify-center bg-gray-100">
-      <div className="relative w-full max-w-6xl h-full">
+    <div className="relative w-full h-[350px] sm:h-[400px] md:h-[550px] lg:h-[800px] overflow-hidden mb-6 sm:mb-12 group bg-gray-100">
+      <div className="relative w-full h-full">
         {/* Banner Images */}
-        <div className="relative w-full h-full bg-gray-100 flex items-center justify-center">
+        <div className="relative w-full h-full">
         {banners.map((banner, index) => (
           <div
             key={banner.id}
-            className={`absolute inset-0 transition-opacity duration-1000 flex items-center justify-center ${
+            className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentBanner ? 'opacity-100' : 'opacity-0'
             }`}
           >
@@ -57,13 +57,13 @@ export default function BannerCarousel() {
             <img
               src={banner.mobileSrc}
               alt={banner.alt}
-              className="w-auto h-auto max-w-full max-h-full object-contain md:hidden"
+              className="w-full h-full object-cover md:hidden"
             />
             {/* Desktop image - hidden on md and below */}
             <img
               src={banner.src}
               alt={banner.alt}
-              className="w-auto h-auto max-w-full max-h-full object-contain hidden md:block"
+              className="w-full h-full object-cover hidden md:block"
             />
           </div>
         ))}
