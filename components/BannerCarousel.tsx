@@ -55,13 +55,13 @@ export default function BannerCarousel() {
             <img
               src={banner.mobileSrc}
               alt={banner.alt}
-              className="w-full h-full object-cover md:hidden"
+              className="w-auto h-auto max-w-full max-h-full object-contain md:hidden"
             />
             {/* Desktop image - hidden on md and below */}
             <img
               src={banner.src}
               alt={banner.alt}
-              className="w-full h-full object-cover hidden md:block"
+              className="w-auto h-auto max-w-full max-h-full object-contain hidden md:block"
             />
           </div>
         ))}
