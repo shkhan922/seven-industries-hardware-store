@@ -42,10 +42,10 @@ export default function BannerCarousel() {
   };
 
   return (
-    <div className="relative w-full mb-6 sm:mb-12 group bg-gray-100 overflow-hidden">
-      <div className="relative w-full">
+    <div className="relative w-full mb-6 sm:mb-12 group bg-gray-100 overflow-hidden" style={{ aspectRatio: '16/6' }}>
+      <div className="relative w-full h-full">
         {/* Banner Images */}
-        <div className="relative w-full flex items-center justify-center bg-gray-100">
+        <div className="relative w-full h-full flex items-center justify-center bg-gray-100">
         {banners.map((banner, index) => (
           <div
             key={banner.id}
@@ -57,13 +57,13 @@ export default function BannerCarousel() {
             <img
               src={banner.mobileSrc}
               alt={banner.alt}
-              className="w-full h-auto max-h-[400px] object-contain md:hidden"
+              className="w-full h-full object-contain md:hidden"
             />
             {/* Desktop image - hidden on md and below */}
             <img
               src={banner.src}
               alt={banner.alt}
-              className="w-full h-auto max-h-[600px] object-contain hidden md:block"
+              className="w-full h-full object-contain hidden md:block"
             />
           </div>
         ))}
