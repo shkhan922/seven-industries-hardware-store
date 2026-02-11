@@ -40,9 +40,10 @@ export default function BannerCarousel() {
   };
 
   return (
-    <div className="relative w-full h-[200px] sm:h-[250px] md:h-[350px] lg:h-[450px] overflow-hidden rounded-lg sm:rounded-xl shadow-lg sm:shadow-2xl mb-6 sm:mb-12 group">
-      {/* Banner Images */}
-      <div className="relative w-full h-full bg-gray-100 flex items-center justify-center">
+    <div className="relative w-full h-[350px] sm:h-[400px] md:h-[550px] lg:h-[800px] overflow-hidden rounded-lg sm:rounded-xl shadow-lg sm:shadow-2xl mb-6 sm:mb-12 group flex items-center justify-center bg-gray-100">
+      <div className="relative w-full max-w-6xl h-full">
+        {/* Banner Images */}
+        <div className="relative w-full h-full bg-gray-100 flex items-center justify-center">
         {banners.map((banner, index) => (
           <div
             key={banner.id}
@@ -64,53 +65,54 @@ export default function BannerCarousel() {
             />
           </div>
         ))}
+        </div>
+
+        {/* Previous Button */}
+        <button
+          onClick={prevBanner}
+          className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-all duration-200 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 z-10"
+          aria-label="Previous banner"
+        >
+          <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        {/* Next Button */}
+        <button
+          onClick={nextBanner}
+          className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-all duration-200 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 z-10"
+          aria-label="Next banner"
+        >
+          <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        {/* Dots Indicator */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+          {banners.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToBanner(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                index === currentBanner
+                  ? 'bg-white w-8'
+                  : 'bg-white/50 hover:bg-white/75'
+              }`}
+              aria-label={`Go to banner ${index + 1}`}
+            />
+          ))}
+        </div>
+
+        {/* Auto-play Toggle */}
+        <button
+          onClick={() => setIsAutoPlay(!isAutoPlay)}
+          className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white px-3 py-1 rounded-full text-sm transition-all duration-200 z-10"
+        >
+          {isAutoPlay ? '⏸ Pause' : '▶ Play'}
+        </button>
       </div>
-
-      {/* Previous Button */}
-      <button
-        onClick={prevBanner}
-        className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-all duration-200 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 z-10"
-        aria-label="Previous banner"
-      >
-        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-        </svg>
-      </button>
-
-      {/* Next Button */}
-      <button
-        onClick={nextBanner}
-        className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 sm:p-2 rounded-full transition-all duration-200 opacity-70 sm:opacity-0 sm:group-hover:opacity-100 z-10"
-        aria-label="Next banner"
-      >
-        <svg className="w-4 h-4 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-        </svg>
-      </button>
-
-      {/* Dots Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {banners.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => goToBanner(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
-              index === currentBanner
-                ? 'bg-white w-8'
-                : 'bg-white/50 hover:bg-white/75'
-            }`}
-            aria-label={`Go to banner ${index + 1}`}
-          />
-        ))}
-      </div>
-
-      {/* Auto-play Toggle */}
-      <button
-        onClick={() => setIsAutoPlay(!isAutoPlay)}
-        className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white px-3 py-1 rounded-full text-sm transition-all duration-200 z-10"
-      >
-        {isAutoPlay ? '⏸ Pause' : '▶ Play'}
-      </button>
     </div>
   );
 }
