@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 
+// Updated: Chest Handle banner now live
+
 const banners = [
   { id: 1, src: '/banner1.jpeg', mobileSrc: '/banner1-mobile.jpeg', alt: 'Hardware Banner 1' },
   { id: 2, src: '/banner2.jpeg', mobileSrc: '/banner2-mobile.jpeg', alt: 'Hardware Banner 2' },
