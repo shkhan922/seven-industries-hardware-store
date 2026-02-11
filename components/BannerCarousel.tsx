@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const banners = [
   { id: 1, src: '/banner1.jpeg', mobileSrc: '/banner1-mobile.jpeg', alt: 'Hardware Banner 1' },
-  { id: 2, src: '/Banner2.jpeg', mobileSrc: '/Banner2.jpeg', alt: 'Hardware Banner 2' },
+  { id: 2, src: '/banner2.jpeg', mobileSrc: '/banner2-mobile.jpeg', alt: 'Hardware Banner 2' },
   { id: 3, src: '/Banner3.jpeg', mobileSrc: '/Banner3.jpeg', alt: 'Hardware Banner 3' },
   { id: 4, src: '/Banner4.jpeg', mobileSrc: '/Banner4.jpeg', alt: 'Hardware Banner 4' },
 ];
